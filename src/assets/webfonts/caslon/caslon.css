@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Caslon';
+    src: url('ACaslonPro-SemiboldItalic.eot');
+    src: url('ACaslonPro-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ACaslonPro-SemiboldItalic.woff2') format('woff2'),
+        url('ACaslonPro-SemiboldItalic.woff') format('woff'),
+        url('ACaslonPro-SemiboldItalic.svg#ACaslonPro-SemiboldItalic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Caslon';
+    src: url('ACaslonPro-Regular.eot');
+    src: url('ACaslonPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ACaslonPro-Regular.woff2') format('woff2'),
+        url('ACaslonPro-Regular.woff') format('woff'),
+        url('ACaslonPro-Regular.svg#ACaslonPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
