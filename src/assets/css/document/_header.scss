@@ -1,0 +1,70 @@
+
+
+header-main{
+	// @include flex(justify-center);
+	display: block;
+	z-index: 100!important;
+	height: calc(100vh - 2rem);
+	background: $suorange;
+	transition: .75s background-color;
+	overflow: hidden;
+@include breakpoint(md){
+	height: calc(100vh);
+}
+&.open {
+	background: $sulgray!important;
+	h1#header-title{
+		color: $suorange;
+	}
+}
+&.header-open{ // timeout function in app.js
+	.header-image{
+		height: calc(100% - 15rem);
+		// transition: 2s;
+		// background-color: blue;
+	}
+}
+	.header-image{
+		height: calc(100% - 24rem);
+		transition: 2s height;
+		// @include flex(justify-center);
+		width: 100%;
+		// height: 20vh;
+		bottom: 0;
+		position: absolute;
+		// top: 15rem;
+		// bottom: 0;
+		z-index: 700!important;
+		background-size: cover;
+		background-position-x: center;
+
+		// padding-top: 260px;
+	}
+	h1#header-title{
+		position: fixed;
+		z-index: 50!important;
+		top: 7rem;
+		margin: 0;
+		// right: 0;
+		width: 100%;
+		padding: 0 2rem 0 2rem;
+		font-size: 40px;
+		line-height: 40px;
+		text-align: right;
+		color: white;
+	@include breakpoint(sm){
+		padding: 0 4rem 0 4rem;
+	@include breakpoint(md){
+		// background: blue;
+		font-size: 3rem!important;
+		line-height: 3rem!important;
+		top: 2rem;
+		right: 2rem;
+		width: calc(50%);
+		padding: 0;
+	@include breakpoint(md){
+		right: 4rem;
+		top: 4rem;
+	}}}}
+}
+

@@ -1,0 +1,91 @@
+body.node,
+body.end,
+body.people{
+	header-main{
+		height: 10rem;
+		background: $suorange;
+		.header-image{
+			transform: scale(2)!important;
+			// width: auto;
+			height: 100%;
+			transition: 2s transform;
+			background-position: center;
+		}
+	&.header-open{
+		.header-image{
+			transform: scale(3);
+			height: 100%;
+		}
+	}
+	@include breakpoint(md){
+		height: 4rem;
+	@include breakpoint(lg){
+		height: 6rem;
+	}}
+		#header-title{
+			display: none;
+		}
+		> *{
+			filter: blur(18px);
+			-webkit-filter: blur(10px);
+			transform: scale(2);
+		}
+	}
+	ui-view{
+		padding-top: 2rem;
+		article{
+			section{
+				// padding-top: 16px;
+
+			}
+			width: 100%;
+			> img{
+				margin-top: -4rem;
+				margin-bottom: 2rem;
+				width: 100%;
+				// border: 2px solid $suorange;
+			}
+			h2#site,
+			current-route,
+			h3{
+				color: $suorange;
+				margin-bottom: 32px;
+			}
+			current-route{
+				display: block;
+				margin-bottom: 1.5rem;
+				*{display: inline}
+				span{
+					margin: 0 10px;
+				}
+			} 
+			h1{
+				// margin-top: 1.5rem;
+			}
+		&.side{
+			p{
+				color: $sudgray;
+			}
+		}}
+	}
+
+@include breakpoint(md){
+	ui-view{
+		display: block;
+
+		article.content{
+			width: 60%;
+			float: left;
+		}
+		article.side{
+			width: 35%;
+			float: right;
+		}
+	}
+}}
+
+body.node,
+body.end{
+	header-main{
+	}
+}

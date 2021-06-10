@@ -1,0 +1,20 @@
+ui-view{
+	@include flex(column, align-center, justify-center);	
+	padding: 0 2rem;
+	overflow: visible;
+&.open{
+	display: none!important;
+}
+@include breakpoint(sm){
+	padding: 0 4rem;
+	z-index: 800!important;
+}@include breakpoint(md){
+	padding: 0 4rem 0 19rem;
+	z-index: 990!important;
+@include breakpoint(lg) {
+	padding: 0 15rem 0 23rem;
+}}}
+
+article section:only-child{
+	padding: 0!important;
+}

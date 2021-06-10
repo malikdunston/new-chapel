@@ -1,0 +1,63 @@
+body.events {
+
+$sky: rgb(126, 171, 226); 
+$sun: rgb(240, 240, 233); 
+
+	header-main{
+
+		height: 20rem;
+	// radial gradient bg
+		background: -moz-radial-gradient(ellipse at 100% 100%, $sun 32%, $sky 100%);
+		background: -webkit-radial-gradient(ellipse at 100% 100%, $sun 0%,$sky 100%);
+		background: radial-gradient(ellipse at 100% 100%, $sun 0%,$sky 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffada5', endColorstr='#484f72',GradientType=1 );
+
+		.header-image{
+			height: calc(100% - 7rem);
+			img{
+				// height: 500px;
+			}
+		}
+		#header-title{
+			font-size: 55px;
+			text-align: left;
+		}
+	@include breakpoint(md){
+		position: fixed;
+		// position: absolute;
+		height: 100vh;
+		width: 25vw;
+		top: 0;
+		right: 0;
+		.header-image{
+			height: calc(100% - 12rem);
+		}
+		#header-title{
+			display: none;
+		}
+	}}
+	ui-view{
+		display: block;
+		margin-top: -4rem;
+	@include breakpoint(md){
+		margin-top: unset;
+		width: 75vw;
+		padding: 2rem 2rem 0 19rem;
+	@include breakpoint(lg){
+		padding: 4rem 2rem 0 24rem;
+
+	}}
+		h1{
+		@include breakpoint(lg){
+			margin-bottom: 4rem!important;
+		}}
+		.event{
+			margin: 0 2rem 2rem 0;
+		@include breakpoint(lg){
+			width: calc(50% - 2rem);
+			float: left;
+		}
+		}
+
+	}
+}

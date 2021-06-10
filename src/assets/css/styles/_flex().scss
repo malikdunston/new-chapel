@@ -1,0 +1,35 @@
+@mixin flex($setting...) {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;	
+	@each $sType in $setting {
+		@if $sType == row 
+		or $sType == row-reverse 
+		or $sType == column 
+		or $sType == column-reverse {
+			flex-direction: $sType;
+		}
+		@if $sType == align-center{
+			align-items: center;
+		}
+		@else if $sType == flex-start
+		or $sType == flex-end
+		or $sType == baseline
+		or $sType == stretch {
+			align-items: $sType;
+		}
+		@if $sType == justify-center{
+			justify-content: center;
+		}
+		@else if $sType == start
+		or $sType == space-between
+		or $sType == space-around
+		or $sType == space-evenly {
+			justify-content: $sType;
+		}
+		@else{  }
+	}
+}
+

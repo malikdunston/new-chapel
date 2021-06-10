@@ -1,11 +1,12 @@
 import { Component } from "react";
 	import "./assets/webfonts/webfonts.css";
 	// import "./assets/css/normalize.css";
-	// import "./assets/css/index.min.css";
+	import "./assets/css/index.min.css";
 	import {
 		BrowserRouter as Router,
 		Route,
 	} from "react-router-dom";
+	import Navigation from "./components/Navigation.js"
 
 class App extends Component {
 constructor() {
@@ -21,27 +22,38 @@ navToggle(){
 		navOpen: !this.state.navOpen
 	})
 };
-getData(type, params, callback) {
-// need to cache proj responses for an hour to optimize performance
-	let url = "http://wp.malikdunston.com/wp-json/wp/v2/", ext;
+async getData(type, params) {
+	let url = "https://hendrickswp.cecildunston.com/wp-json/wp/v2/", ext = "";
 	switch (type) {
-		case "projects":
-			ext = "projects?per_page=100" + params
+		case "pages":
+			ext = "pages";
+			break
+		case "nav":
+			ext = "pages";
+			break
+		case "homepage":
+			ext = "homepage";
+			break
+		case "connect":
+			ext = "connect";
+			break
+		default: 
 			break
 	};
-	fetch(url + ext)
-		.then(data => data.json())
-		.then(data => {
-			callback(data)
-		});
+	let resp = await fetch(url + ext + "?per_page=100" + params);
+	let data = await resp.json();
+	return data;
 };
 componentDidMount(){
-	console.log(window);
 }
 render() {
 	return (
 		<Router>
-			<div className={"home"}>
+			<div className={this.state.navOpen ? "navOpen" : ""}>
+				<Navigation
+					getData={this.getData}
+					navOpen={this.state.navOpen}
+					navToggle={this.navToggle}/>
 			</div>
 		</Router>
 	);

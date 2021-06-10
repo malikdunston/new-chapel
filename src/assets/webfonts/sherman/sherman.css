@@ -1,0 +1,168 @@
+/* Sherman */
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSans-Book";
+	src: url("./ShermanSans-Book.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSans-Book.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSans-Book.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSans-Book.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSans-Book.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSans-Book.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSans-Book.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSans-BookItalic";
+	src: url("./ShermanSans-BookItalic.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSans-BookItalic.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSans-BookItalic.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSans-BookItalic.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSans-BookItalic.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSans-BookItalic.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSans-BookItalic.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSerif-Bold";
+	src: url("./ShermanSerif-Bold.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSerif-Bold.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSerif-Bold.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSerif-Bold.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSerif-Bold.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSerif-Bold.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSerif-Bold.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSerif-BoldItalic";
+	src: url("./ShermanSerif-BoldItalic.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSerif-BoldItalic.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSerif-BoldItalic.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSerif-BoldItalic.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSerif-BoldItalic.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSerif-BoldItalic.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSerif-BoldItalic.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSerif-Book";
+	src: url("./ShermanSerif-Book.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSerif-Book.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSerif-Book.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSerif-Book.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSerif-Book.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSerif-Book.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSerif-Book.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSerif-BookItalic";
+	src: url("./ShermanSerif-BookItalic.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSerif-BookItalic.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSerif-BookItalic.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSerif-BookItalic.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSerif-BookItalic.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSerif-BookItalic.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSerif-BookItalic.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSans-Bold";
+	src: url("./ShermanSans-Bold.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSans-Bold.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSans-Bold.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSans-Bold.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSans-Bold.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSans-Bold.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSans-Bold.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+	font-family: "ShermanSans-BoldItalic";
+	src: url("./ShermanSans-BoldItalic.eot");
+	/* IE9 Compat Modes */
+	src: url("./ShermanSans-BoldItalic.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */
+		url("./ShermanSans-BoldItalic.otf") format("opentype"),
+		/* Open Type Font */
+		url("./ShermanSans-BoldItalic.svg") format("svg"),
+		/* Legacy iOS */
+		url("./ShermanSans-BoldItalic.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+		url("./ShermanSans-BoldItalic.woff") format("woff"),
+		/* Modern Browsers */
+		url("./ShermanSans-BoldItalic.woff2") format("woff2");
+	/* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}

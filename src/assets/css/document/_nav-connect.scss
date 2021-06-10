@@ -1,0 +1,57 @@
+nav-connect{
+	position: fixed!important;
+	width: calc(100% - 64px);
+	@include flex(column-reverse);
+	border: 2px solid $suorange;
+	margin: 0 32px;
+	background: white;
+	bottom: calc(64px + 32px);
+	z-index: 900;
+	transition: .25s;
+	.connect-list-item,
+	> button{
+		height: 65px;
+		@include flex(column, align-center, justify-center);
+		text-transform: uppercase;
+		font-family: "ShermanSans-Book";
+		font-weight: 900;
+		letter-spacing: .15rem;
+		justify-content: center;
+		border-bottom: 2px solid $suorange;
+		color: $suorange;
+	&:last-child{
+		// border-bottom: 0;
+	}}
+	> button {
+		width: 100%;
+		justify-content: center;
+		background: $suorange;
+		color: white;
+		h3{
+			color: white;
+			margin: 0;
+		}
+	}
+@include breakpoint(sm){
+	width: calc(100% - 128px);
+	margin: 0 64px;
+}
+@include breakpoint(md){
+	// bottom: calc(64px + 32px);
+	bottom: 32px;
+	margin: 0;
+	width: 240px;
+	left: 32px;
+	z-index: 1000;
+}
+@include breakpoint(lg){
+	bottom: 64px;
+	left: 64px;
+}}
+
+// make global
+nav-connect.offpage{
+	bottom: -100px;
+}
+
+

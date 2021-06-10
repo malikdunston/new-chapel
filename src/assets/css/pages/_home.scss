@@ -1,0 +1,31 @@
+body.home{
+	header-main{
+		h1#header-title{
+			font-size: 2rem;
+			line-height: 2rem;
+		}
+	}
+}
+body.event,
+body.home{
+	ui-view{
+		top: -65px;
+	@include breakpoint(md){
+		// position: absolute;
+		// bottom: 0;
+		top: unset;
+		padding: 0;
+	}
+		.event:first-of-type{
+		@include breakpoint(md){
+			position: absolute;
+			margin: 0;
+			bottom: 2rem;
+			right: 2rem;
+			width: 30rem;
+		@include breakpoint(lg){
+			bottom: 4rem;
+			right: 4rem;
+		}}}
+	}
+}

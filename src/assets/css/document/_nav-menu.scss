@@ -1,0 +1,350 @@
+#nav-menu {
+	position: fixed!important;
+	box-sizing: border-box;
+	top: 0;
+	width: calc(100% - 64px);
+	z-index: 950;
+	margin: 0 32px;
+	border-top: 0;
+	border: 2px solid $suorange;
+	overflow: hidden;
+@include breakpoint(sm){
+	width: calc(100% - 128px)!important;
+	margin: 0 64px;
+@include breakpoint(md){
+	@include flex(row);
+	margin: 32px 0 0 32px;
+	margin-right: 0;
+	height: 100%;
+	width: 340px!important;
+	border: 0;
+	overflow: auto;
+	background-color: transparent;
+@include breakpoint(lg){
+	margin: 4rem 0 0 4rem;
+	margin-right: 0;
+}}}
+
+&:hover{
+@include breakpoint(md){
+	width: calc(100% - 4rem)!important;
+}
+@include breakpoint(lg){
+	width: calc(100% - 8rem)!important;
+}}
+
+
+	#menu-top {
+		@include flex(row, align-center, space-between);
+		box-sizing: border-box;
+		width: 100%;
+		height: 65px;
+		background-color: white;
+	@include breakpoint(md){
+		flex: 0 0 15rem;
+		border: 2px solid $suorange;
+		height: 67px;
+	}
+	// &.open{
+	// }
+		a.logo-wrap{
+			z-index: 1000;
+			img#logo {
+				height: 32px;
+				padding: 4px 0 0 24px;
+			}
+		}
+		button#hamburger {
+			display: block;
+			position: relative;
+			width: 65px;
+			height: 65px;
+			border-left: 2px solid $suorange;
+			font-size: 24px;
+			color: $suorange;
+			text-align: center;
+			line-height: 65px;
+			transition: all .5s;
+		@include breakpoint(md){
+			display: none;
+		}}
+	}
+	#menu-body {
+		height: 0;
+		transition: 1s all;
+		transition: 0s width;
+		z-index: 900;
+		background: $sulgray;
+		position: relative;
+		overflow: hidden;
+		transition: height .25s;
+		border: 0px!important;
+	@include breakpoint(md){
+		width: 0;
+		// display: none;
+		overflow: auto!important;
+		@include flex(row-reverse);
+		border: 2px solid $suorange;
+		border-top: 0px!important;
+		flex: 1;
+		margin-left: -2px;
+		transition: none;
+	@include breakpoint(lg){		
+	}}
+	
+		#body-header{ //  "... heart of su ..."
+			@include flex(column);
+			height: auto;
+			background: white;
+		@include breakpoint(md){
+			// position: absolute;
+			// top: 34px;
+			background: $sudgray;
+			height: calc(100%);
+			width: 50%;
+			// width: calc(calc(calc(100vw - 240px) - 64px) / 2);
+			border-left: 2px solid $suorange;
+		}	.header-image{
+				@include flex(column, align-center, justify-center);
+				width: 100%;
+				height: 25vh;
+				overflow: hidden;
+				border-bottom: 2px solid $suorange;
+				object-fit: contain;
+				background-position: center;
+			@include breakpoint(sm){
+				height: 240px;
+			}@include breakpoint(md){
+				height: 100%!important;
+				// flex: 1;
+			}	img {
+					position: relative;
+					width: 100%;
+					object-fit: contain;
+				@include breakpoint(md){
+					margin: 0;
+					height: 100%;
+					width: auto;
+				}}
+			}
+			.header-title{
+				height: 45px;
+				padding: 0 24px;
+				background: $suorange;
+				@include flex(row, space-between, align-center);
+				font-size: 12px;
+				text-transform: uppercase;
+				font-weight: bold;
+				letter-spacing: .15rem;
+				color: white;
+			@include breakpoint(md){
+				display: none;
+			}
+			@include breakpoint(md){
+				position: absolute;
+				top: 24px;
+				left: 24px;
+				// display: none;
+				svg{
+					margin: 0 0 4px 12px;
+				}
+			}}
+			.header-brief{
+				margin: 0;
+				font-size: 32px;
+				line-height: 32px;
+				color: $suorange;
+				padding: 32px;
+				background: white;
+				p{ margin: 0;}
+				// border-bottom: 2px solid $suorange;
+			@include breakpoint(md){
+				// position: fixed;
+				// bottom: 0;
+			}}
+		}
+		#body-list{ //  about/spirituallife/chaplaincies
+			margin-bottom: 10rem;
+			border-bottom: 2px solid $suorange;
+		@include breakpoint(md){
+			// margin-left: calc(50%);
+			width: 50%;
+			margin: 0;
+			border-bottom: 0;
+			overflow: auto;
+			overflow-y: scroll;
+			scrollbar-width: none; /* Firefox */
+			-ms-overflow-style: none;  /* IE 10+ */
+			// }
+		&::-webkit-scrollbar { /* WebKit */
+				width: 0;
+				height: 0;
+		}}
+			li.list-parent {
+				.parent-title{
+					border-bottom: 2px solid $suorange;
+					font-weight: bold;
+					text-transform: uppercase;
+					letter-spacing: .15rem;
+					@include flex(row, align-center);
+					height: 65px;
+					background: white;
+					color: $suorange;
+					width: 100%;
+					justify-content: space-between;
+					cursor: pointer;
+				&:first-of-type{
+					border-top: 2px solid $suorange;
+				}
+				@include breakpoint(md){
+				&:first-child{
+					border-top: none;
+				}}
+					span{
+						margin: 0 1.5rem;
+						height: 100%;
+						line-height: 1.15em;
+						@include flex(row, align-center);
+						width: 50%;
+					}
+					.parent-title-icon{
+						border-left: 2px solid $suorange;
+						height: 100%;
+						line-height: 4rem;
+						width: 4rem;
+						text-align: center;
+						&::after{
+							content: "+";
+							font-size: 2rem;
+							font-weight: 100;
+						}
+					&.selected{
+						&::after{
+							content: "-";
+							font-size: 2rem;
+							font-weight: 100;
+						}
+					}
+					}
+				}
+			&:not(.selected){
+				.parent-title{
+					border-bottom: 0px solid $suorange;
+				@include breakpoint(md){
+					border-bottom: 2px solid $suorange;
+				}
+				}
+
+				> .list-child{
+					display: none;
+				}	
+			}
+			&.selected{
+				> .list-child {
+					li.child-title {
+						@include flex();
+						border-bottom: 1px solid $sumgray;
+						color: $sudgray;
+						font-size: 12px;
+						font-weight: bold;
+						text-transform: uppercase;
+						letter-spacing: .15rem;
+						@include flex(row, align-center);
+						height: 65px;
+						padding: 0 24px;
+					&:last-of-type{
+						border-bottom: 0;
+					}}
+				@include breakpoint(md){
+					border-bottom: 2px solid $suorange;
+				}
+
+				}
+			}}
+		}
+		#body-options{
+			@include flex(row);
+			left: 2rem;
+			position: fixed;
+			width: calc(100% - 64px);
+			color: $suorange;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: .15rem;
+			bottom: -70px;
+			transition: .75s bottom;
+			border: 2px solid $suorange;
+			border-bottom: 0;
+			// border-top: 2px solid $suorange;
+			// border-left: 2px solid $suorange;
+			// border-right: 2px solid $suorange;
+		@include breakpoint(sm){
+			left: 4rem;
+			width: calc(100% - 8rem);
+		}@include breakpoint(md){
+			// z-index: 1000;
+			@include flex(column);
+			width: 240px;
+			position: fixed;
+			display: block;
+			top: calc(32px + 67px);
+			left: 32px;
+			bottom: calc(100vh);
+			border-top: 0;
+			border: 0;
+			height: 12rem;
+		}	
+		@include breakpoint(lg){
+			left: 64px;
+			top: calc(64px + 67px)!important;
+		}	
+			div.btn-option{
+				@include flex(row, align-center, justify-center);
+				height: 65px;
+				flex: 1;
+				background: white;
+				border-bottom: 2px solid $suorange;
+			&.selectedOption{
+				display: none;
+			}
+			&:not(:first-child){
+				border-left: 2px solid $suorange;
+			}
+			@include breakpoint(md){
+				@include flex(row);
+				justify-content: flex-start;
+				flex: 0 0 64px;
+				padding-left: 24px;
+				border-right: 2px solid $suorange;
+				border-left: 2px solid $suorange;
+			&:hover{
+				color: white;
+				background: $suorange;
+			}
+			&.selectedOption{
+				@include flex(row);
+			}}}
+		}
+	}
+}
+
+.navOpen{
+	#menu-top{
+		border-bottom: 2px solid $suorange;
+	}
+	#menu-body {
+		height: calc(100vh - 4rem)!important;
+		overflow-y: visible;
+		overflow: auto;
+		#body-options{
+			bottom: 0;
+		}
+	@include breakpoint(md){
+		border: 2px solid $suorange !important;
+		height: calc(100vh - 64px);
+		width: calc(100vw - 0px - 240px);
+		// bottom: auto;
+	@include breakpoint(lg){
+		height: calc(100vh - 128px);
+	}}}
+}

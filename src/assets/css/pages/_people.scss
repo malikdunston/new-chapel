@@ -1,0 +1,105 @@
+// 	section#people{
+		.person{
+			// background: red;
+			margin-bottom: 32px;
+			@include flex(row, align-center);
+			.person-img{
+				width: 4rem;
+				height: 4rem;
+				flex-grow: 4rem;
+				background-size: cover;
+				border-radius: 64px;
+			}
+			.person-name{
+				flex: 4rem;
+				padding-left: 32px;
+				h3{
+					color: $suxgray;
+					margin-bottom: 8px;
+				}
+				p{
+					margin: 0;
+				}
+			}
+		}
+// 	}
+body.people{
+	header-main{
+		height: 120px;
+		background: $suorange;
+		> *{
+			filter: blur(2rem);
+			-webkit-filter: blur(2rem);
+			transform: scale(2);
+		}
+	}
+	ui-view{
+		@include flex(column, align-right);
+		> *{
+			width: 100%;
+
+		}
+		.person-image{
+			margin-top: -25vw;
+			margin-bottom: 2rem;
+			margin-left: auto;
+			width: 50vw;
+			height: 50vw;
+			border-radius: 50vw;
+			right: 2rem;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		article.content{
+			#name{
+				color: $suorange;
+				margin-bottom: 1rem;
+			}
+			#title{
+				color: $suxgray;
+			}
+			#social{
+				color: $suorange;
+				li{
+					@include flex(row, align-center);
+						margin-bottom: 2rem;
+					a{
+						margin-left: 1rem;
+					}
+				}
+			}
+		}
+	@include breakpoint(sm){
+		.person-image{
+			width: 12rem;
+			height: 12rem;
+			margin-top: -6rem;
+		}
+	}
+	@include breakpoint(md){
+		.person-image{
+			position: fixed;
+			right: 5rem;
+			// top: 0;
+			margin-top: -4rem;
+		}
+		#social{
+			position: fixed;
+			right: 0;
+			width: 17rem;
+			padding-top: 5rem;
+			// right: 2rem;
+		}
+	}
+	@include breakpoint(lg){
+		.person-image{
+			right: 20vw;
+		}
+
+		#social{
+			width: calc(20vw + 12rem);
+		}
+
+	}
+	}
+}

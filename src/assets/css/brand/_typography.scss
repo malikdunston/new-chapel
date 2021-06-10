@@ -1,0 +1,69 @@
+/**
+ * Basic typography style for copy text
+ */
+
+/// @type List
+$suserif: 'ShermanSerif-Book',
+serif;
+$susans: 'ShermanSans-Book',
+sans-serif;
+
+/// @type List
+$code-font-stack: 'Courier New',
+'DejaVu Sans Mono',
+'Bitstream Vera Sans Mono',
+'Monaco',
+monospace !default;
+
+::root{
+	font-size: 16px;
+}
+
+body {
+	color: $suxgray;
+	font-family: $susans;
+	font-size: 1rem;
+	line-height: 1rem;
+	background-color: $sulgray;
+
+	h1,
+	h1 p{
+		color: $suorange;
+		font-family: $suserif;
+		font-weight: 100;
+		font-size: 3rem;
+		line-height: 3rem;
+		margin-top: 0;
+		margin-bottom: 2rem!important;
+	}
+
+	h2,
+	h2 p{
+		color: $suorange;
+		font-family: $suserif;
+		font-weight: 100;
+		font-size: 2rem;
+		line-height: 2rem;
+		margin-top: 0;
+	}
+
+	h3{
+		margin-top: 0;
+		color: $suorange;
+		font-size: 1.25rem;
+	}
+	p {
+		color: $suxgray;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		margin: 0;
+		margin-bottom: 1rem;
+	}
+	a{
+		color: $suorange;
+		letter-spacing: .05em;
+	}
+	.linked{
+		cursor: pointer!important;
+	}
+}

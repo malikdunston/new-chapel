@@ -1,0 +1,35 @@
+body.strategic,
+body.annual{
+	header-main{
+		background: white;
+		height: 16rem;
+		.header-image{
+			position: relative;
+			height: 100%;
+		}
+	}
+&.pdf{
+	header-main{
+		// background: red;
+		// height: 6rem;
+		height: 0;
+	}
+}
+	ui-view{
+		align-items: unset;
+		padding-top: 4rem;
+		.button-group{
+			// letter-spacing: -1rem;
+			button{
+				color: $suorange;
+				background: white;
+				display: inline-block;
+				padding: 1rem 1.15rem;
+				// font-size: 1.15rem;
+				border: 2px solid $suorange;
+			&:nth-child(2){
+				border-left: 0px;
+			}}
+		}
+	}
+}

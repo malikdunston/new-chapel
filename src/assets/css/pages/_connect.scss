@@ -1,0 +1,67 @@
+body.connect{
+	header-main{
+		height: 20rem;
+		// padding-top: 8rem;
+		.header-image{
+			height: calc(100% - 7rem);
+		}
+		#header-title{
+			display: none;
+			text-align: left;
+		}
+	@include breakpoint(md){
+		.header-image{
+			height: calc(100% - 12rem);
+		}
+		background: $suorange;
+		position: fixed;
+		// position: absolute;
+		height: 100vh;
+		width: 25vw;
+		top: 0;
+		right: 0;
+	}}
+
+		
+	ui-view{
+		padding-top: 2rem;
+		display: block;
+	@include breakpoint(md){
+		padding-right: calc(25vw + 4rem);
+		padding-top: 4rem;
+	@include breakpoint(lg){
+	}}
+		> *{
+			// background: blue;
+			width: 100%;
+		}
+		h1 span{
+			text-transform: capitalize;
+		}
+		.connect-badge{
+			border: 2px solid $suorange;
+			margin-bottom: 2rem;
+			display: block;
+			.badge-top{
+				height: 15rem;
+				// height: auto;
+				background-size: cover;
+				background-position: center;
+			}
+			.badge-bottom{
+				color: white;
+				background: $suorange;
+				padding: 2rem;
+				text-transform: uppercase; 
+				letter-spacing: .15em;
+				margin: 0;
+			}
+		@include breakpoint(lg){
+			margin: 0 2rem 2rem 0;
+			width: calc(50% - 2rem);
+			float: left;
+		}
+		}
+	}
+}
+

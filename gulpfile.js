@@ -15,8 +15,8 @@ var projFiles = [
 	"./**/**/**/*.svg"
 ]
 
-var SCSS_WATCH = './src/assets/scss/**/*.scss';
-var SCSS_SRC = './src/assets/scss/index.scss';
+var SCSS_WATCH = './src/assets/css/**/*.scss';
+var SCSS_SRC = './src/assets/css/index.scss';
 var SCSS_DEST = './src/assets/css';
 
 function compile_scss() {

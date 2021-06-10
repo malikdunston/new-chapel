@@ -1,0 +1,46 @@
+.event{
+&#main-event{
+	// background: yellow;
+	.event-info{
+		margin: 0;
+	}
+}
+	border:2px solid $suorange;
+	background: white;
+	position: relative;
+	@include flex(row);
+	min-height: 130px;
+	text-transform: uppercase;
+	font-family: 'ShermanSans-Bold';
+	margin-bottom: 32px;
+	width: 100%;
+	.event-date{		
+		font-family: 'ShermanSans-Book';
+		background: $suorange;
+		color: white;
+		// min-width: 65px;
+		padding: 0 24px;
+		@include flex(column, justify-center, align-center);
+		.event-month{
+			padding-bottom: 8px;
+			letter-spacing: .2rem;
+		}
+		.event-day{
+			font-family: 'ShermanSans-Bold';
+			font-size: 34px;
+			// margin-top: 0px;
+		}
+	}
+	.event-info{
+		@include flex(column, space-between);
+		color: $suorange!important;
+		width: 100%;
+		padding: 18px;
+		.event-time{
+			text-align: right;
+		}
+		.event-name{
+			padding-top: 12px;
+		}
+	}
+}
