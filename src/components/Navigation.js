@@ -3,6 +3,7 @@ class Navigation extends Component {
 constructor() {
 	super();
 	this.state = {
+		navIndex: 0,
 		menu: [],
 		current: {
 			id: null,
@@ -45,13 +46,14 @@ async componentDidMount(){
 	})
 	this.setState({
 		menu: menu,
-		current: menu[0]
+		current: menu[this.state.navIndex]
 	})
 }
-selectNavOption(x){
-	this.setState({current: this.state.menu[x]})
+select = (tab) => (ev) => {
+	let selectedTab = this.state.menu.filter(t=>t.id === tab.id)[0];
+	this.setState({current: selectedTab})
 }
-select = (node) => (ev) =>{
+accordionToggle = (node) => (ev) =>{
 	let current = this.state.current;
 	let thisNode = current.nodes.filter(n=>n.id === node.id)[0];
 	thisNode.selected = !thisNode.selected;
@@ -87,7 +89,7 @@ render() {
 							className={"list-parent" + (node.selected ? " selected" : "")}>
 							<div className="parent-title">
 								{node.title}
-								<div className="parent-title-icon" onClick={this.select(node)}></div>
+								<div className="parent-title-icon" onClick={this.accordionToggle(node)}></div>
 							</div>
 							<ul className="list-child">
 								{node.ends.map(end=>{
@@ -99,7 +101,16 @@ render() {
 						</li>
 					})}
 				</ul>
-				<div id="body-options"></div>
+				<div id="body-options">
+					{this.state.menu.map(tab=>{
+						return <div 
+							key={tab.id} 
+							className={"btn-option" + (tab.id === this.state.current.id ? " hidden" : "")} 
+							onClick={this.select(tab)}>
+							{tab.title}
+						</div>
+					})}
+				</div>
 			</div>
 		</div>
 	);

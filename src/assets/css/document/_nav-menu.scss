@@ -337,13 +337,15 @@
 		overflow-y: visible;
 		overflow: auto;
 		#body-options{
-			bottom: 0;
+			bottom: 0!important;
+			.hidden{
+				display: none!important;
+			}
 		}
 	@include breakpoint(md){
 		border: 2px solid $suorange !important;
 		height: calc(100vh - 64px);
 		width: calc(100vw - 0px - 240px);
-		// bottom: auto;
 	@include breakpoint(lg){
 		height: calc(100vh - 128px);
 	}}}
