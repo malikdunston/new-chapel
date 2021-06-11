@@ -1,4 +1,5 @@
 import { Component } from "react";
+	import {Link} from "react-router-dom";
 class Navigation extends Component {
 constructor() {
 	super();
@@ -63,9 +64,11 @@ render() {
 	return (
 		<div id="nav-menu">
 			<div id="menu-top">
-				<a href="/" className="logo-wrap">
+				{/* <a href="/" className="logo-wrap"> */}
+				<Link to={`${process.env.PUBLIC_URL}/`} className="logo-wrap">
 					<img id="logo" src="./logo.svg" alt="Hendricks Chapel Logo" />
-				</a>
+				</Link>
+				{/* </a> */}
 				<button id="hamburger" onClick={this.props.navToggle}>
 					{this.props.navOpen ? <span>✕</span> : <span>☰</span>}
 				</button>

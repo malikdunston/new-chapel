@@ -48,12 +48,27 @@ componentDidMount(){
 }
 render() {
 	return (
-		<Router>
+		<Router basename={'/chapel'}>
 			<div className={this.state.navOpen ? "navOpen" : ""}>
 				<Navigation
 					getData={this.getData}
 					navOpen={this.state.navOpen}
 					navToggle={this.navToggle}/>
+				<Route
+					exact
+					path={`${process.env.PUBLIC_URL}`}
+					render={props=>{
+						return <div {...props}>
+							Homepage!!!!!!!
+						</div>
+					}}/>
+				<Route
+					path={`${process.env.PUBLIC_URL}/example`}
+					render={props=>{
+						return <button {...props}>
+							example page!!!!!!!
+						</button>
+					}}/>
 			</div>
 		</Router>
 	);
