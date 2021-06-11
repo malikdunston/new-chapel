@@ -15,7 +15,6 @@ constructor() {
 	}
 };
 async componentDidMount(){
-
 	let data = await this.props.getData("pages", "");
 	let allPages = data.map(m=>{
 		return {
@@ -25,6 +24,7 @@ async componentDidMount(){
 			img: m.acf.image,
 			title: m.title.rendered,
 			brief: m.excerpt.rendered,
+			selected: false
 		}
 	})
 	let main = allPages.filter(p=>p.parent == 0);
@@ -44,11 +44,18 @@ async componentDidMount(){
 		return menuItem
 	})
 	this.setState({
-		menu: menu
+		menu: menu,
+		current: menu[0]
 	})
 }
 selectNavOption(x){
 	this.setState({current: this.state.menu[x]})
+}
+select = (node) => (ev) =>{
+	let current = this.state.current;
+	let thisNode = current.nodes.filter(n=>n.id === node.id)[0];
+	thisNode.selected = !thisNode.selected;
+	this.setState({current: current});
 }
 render() {
 	return (
@@ -74,23 +81,27 @@ render() {
 					</h2>
 				</div>
 				<ul id="body-list">
-					<li className="list-parent">
-						<div className="parent-title">
-							Something Here
-							<div className="parent-title-icon"></div>
-						</div>
-						<ul className="list-child">
-							<li className="child-title">
-								a sub
-							</li>
-							<li className="child-title">
-								a sub
-							</li>
-							<li className="child-title">
-								a sub
-							</li>
-						</ul>
-					</li>
+					{this.state.current.nodes.map(node=>{
+						return <li 
+							key={node.id}
+							className={node.selected ? "list-parent selected" : "list-parent"}>
+							<div className="parent-title">
+								{node.title}
+								<div className="parent-title-icon" onClick={this.select(node)}></div>
+							</div>
+							<ul className="list-child">
+								<li className="child-title">
+									a sub
+								</li>
+								<li className="child-title">
+									a sub
+								</li>
+								<li className="child-title">
+									a sub
+								</li>
+							</ul>
+						</li>
+					})}
 				</ul>
 				<div id="body-options"></div>
 			</div>
