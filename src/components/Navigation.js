@@ -84,21 +84,17 @@ render() {
 					{this.state.current.nodes.map(node=>{
 						return <li 
 							key={node.id}
-							className={node.selected ? "list-parent selected" : "list-parent"}>
+							className={"list-parent" + (node.selected ? " selected" : "")}>
 							<div className="parent-title">
 								{node.title}
 								<div className="parent-title-icon" onClick={this.select(node)}></div>
 							</div>
 							<ul className="list-child">
-								<li className="child-title">
-									a sub
-								</li>
-								<li className="child-title">
-									a sub
-								</li>
-								<li className="child-title">
-									a sub
-								</li>
+								{node.ends.map(end=>{
+									return <li key={end.id} className="child-title">
+										{end.title}
+									</li>
+								})}
 							</ul>
 						</li>
 					})}
