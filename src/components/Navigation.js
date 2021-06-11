@@ -15,7 +15,37 @@ constructor() {
 	}
 };
 async componentDidMount(){
-	this.setState({menu: await this.props.getData("pages", "&parent=0")})
+
+	let data = await this.props.getData("pages", "");
+	let allPages = data.map(m=>{
+		return {
+			id: m.id,
+			parent: m.parent,
+			slug: m.slug,
+			img: m.acf.image,
+			title: m.title.rendered,
+			brief: m.excerpt.rendered,
+		}
+	})
+	let main = allPages.filter(p=>p.parent == 0);
+	let otherPages = allPages.filter(p=>p.parent !== 0);
+	let menu = main.map(tab=>{
+		let nodes = otherPages.filter(p=>p.parent == tab.id);
+		nodes = nodes.map(n=>{
+			return {
+				...n,
+				ends: otherPages.filter(e=>e.parent == n.id)
+			}
+		})
+		let menuItem = {
+			...tab,
+			nodes: nodes
+		}
+		return menuItem
+	})
+	this.setState({
+		menu: menu
+	})
 }
 selectNavOption(x){
 	this.setState({current: this.state.menu[x]})
