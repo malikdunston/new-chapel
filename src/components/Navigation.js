@@ -4,6 +4,7 @@ class Navigation extends Component {
 constructor() {
 	super();
 	this.state = {
+		navOpen: false,
 		navIndex: 0,
 		menu: [],
 		current: {
@@ -15,6 +16,7 @@ constructor() {
 			nodes: []
 		}
 	}
+	this.navToggle = this.navToggle.bind(this);
 };
 async componentDidMount(){
 	let data = await this.props.getData("pages", "");
@@ -50,6 +52,24 @@ async componentDidMount(){
 		current: menu[this.state.navIndex]
 	})
 }
+navToggle = (openClose) => (ev) => {
+	switch (openClose){
+		case "open":
+			document.body.classList.add("navOpen");
+			break;
+		case "close":
+			document.body.classList.remove("navOpen");
+			break;
+		default:
+			document.body.classList.toggle("navOpen");
+			this.setState({
+				navOpen: !this.state.navOpen
+			})
+			break;
+		// default:
+		// 	break;
+	}
+};
 select = (tab) => (ev) => {
 	let selectedTab = this.state.menu.filter(t=>t.id === tab.id)[0];
 	this.setState({current: selectedTab})
@@ -64,13 +84,11 @@ render() {
 	return (
 		<div id="nav-menu">
 			<div id="menu-top">
-				{/* <a href="/" className="logo-wrap"> */}
-				<Link to={`/`} className="logo-wrap">
+				<Link to={`/`} className="logo-wrap" onClick={this.navToggle("close")}>
 					<img id="logo" src="./logo.svg" alt="Hendricks Chapel Logo" />
 				</Link>
-				{/* </a> */}
-				<button id="hamburger" onClick={this.props.navToggle}>
-					{this.props.navOpen ? <span>✕</span> : <span>☰</span>}
+				<button id="hamburger" onClick={this.navToggle()}>
+					{this.state.navOpen ? <span>✕</span> : <span>☰</span>}
 				</button>
 			</div>
 			<div id="menu-body">
@@ -91,14 +109,16 @@ render() {
 							key={node.id}
 							className={"list-parent" + (node.selected ? " selected" : "")}>
 							<div className="parent-title">
-								<Link to={`/example`}>
+								<Link to={`/example`} onClick={this.navToggle("close")}>
 									{node.title}
 								</Link>
 								<div className="parent-title-icon" onClick={this.accordionToggle(node)}></div>
 							</div>
 							<ul className="list-child">
 								{node.ends.map(end=>{
-									return <li key={end.id} className="child-title">
+									return <li key={end.id} 
+										className="child-title"
+										onClick={this.navToggle("close")}>
 										{end.title}
 									</li>
 								})}

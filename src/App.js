@@ -15,12 +15,6 @@ class App extends Component {
 			navOpen: false,
 		}
 		this.getData = this.getData.bind(this);
-		this.navToggle = this.navToggle.bind(this);
-	};
-	navToggle() {
-		this.setState({
-			navOpen: !this.state.navOpen
-		})
 	};
 	async getData(type, params) {
 		let url = "https://hendrickswp.cecildunston.com/wp-json/wp/v2/", ext = "";
@@ -52,8 +46,7 @@ class App extends Component {
 				<div className={this.state.navOpen ? "navOpen" : ""}>
 					<Navigation
 						getData={this.getData}
-						navOpen={this.state.navOpen}
-						navToggle={this.navToggle} />
+						navOpen={this.state.navOpen}/>
 					<Route
 						exact
 						path={`/`}
