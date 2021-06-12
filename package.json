@@ -43,6 +43,8 @@
 		"gulp-rename": "^2.0.0",
 		"gulp-sass": "^4.1.0",
 		"gulp-uglify": "^3.0.2",
+		"moment": "^2.29.1",
+		"react-moment": "^1.1.1",
 		"react-router-dom": "^5.2.0"
 	},
 	"homepage": "https://dev.malikdunston.com/chapel"

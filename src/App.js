@@ -1,14 +1,16 @@
 import { Component } from "react";
-import "./assets/webfonts/webfonts.css";
-// import "./assets/css/normalize.css";
-import "./assets/css/index.min.css";
-import {
-	BrowserRouter as Router,
-	Route,
-} from "react-router-dom";
-import Navigation from "./components/Navigation.js"
-import Header from "./components/Header.js"
-import Connect from "./components/Connect.js"
+	import "./assets/webfonts/webfonts.css";
+	// import "./assets/css/normalize.css";
+	import "./assets/css/index.min.css";
+	import {
+		BrowserRouter as Router,
+		Route,
+	} from "react-router-dom";
+	import moment from "moment";
+	import Navigation from "./components/Navigation.js"
+	import Header from "./components/Header.js"
+	import Connect from "./components/Connect.js"
+	import Event from "./components/Event.js"
 class App extends Component {
 	constructor() {
 		super();
@@ -17,6 +19,7 @@ class App extends Component {
 			events: []
 		}
 		this.getData = this.getData.bind(this);
+		this.sortEvents = this.sortEvents.bind(this);
 	};
 	async getData(type, params) {
 		let url = "https://hendrickswp.cecildunston.com/wp-json/wp/v2/", ext = "";
@@ -43,8 +46,18 @@ class App extends Component {
 	async componentDidMount() {
 		let data = await fetch("https://dev.malikdunston.com/data/chapel/get_events.php");
 		let events = await data.json();
-		this.setState({events: JSON.parse(events)})
-		console.log(JSON.parse(events)[0]);
+		this.setState({events: this.sortEvents(JSON.parse(events))})
+	};
+	sortEvents(events){
+		return events.map(e => {
+			return {
+				...e,
+				month: moment(e.startDateTime).format("MMM"),
+				day: moment(e.startDateTime).format("DD"),
+				startTime: moment(e.startDateTime).format("h:mm A"),
+				endTime: moment(e.endDateTime).format("h:mm A")
+			}
+		})
 	}
 	render() {
 		return (
@@ -70,6 +83,7 @@ class App extends Component {
 							</button>
 						}} />
 					<Connect getData={this.getData} />
+					<Event {...this.state.events[0]} />
 				</div>
 			</Router>
 		);
