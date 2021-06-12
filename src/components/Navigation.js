@@ -85,7 +85,7 @@ render() {
 		<div id="nav-menu">
 			<div id="menu-top">
 				<Link to={`/`} className="logo-wrap" onClick={this.navToggle("close")}>
-					<img id="logo" src="./logo.svg" alt="Hendricks Chapel Logo" />
+					<img id="logo" src={`${process.env.PUBLIC_URL}/assets/images/logo.svg`} alt="Hendricks Chapel Logo" />
 				</Link>
 				<button id="hamburger" onClick={this.navToggle()}>
 					{this.state.navOpen ? <span>✕</span> : <span>☰</span>}

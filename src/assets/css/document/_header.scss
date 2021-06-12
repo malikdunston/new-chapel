@@ -1,6 +1,6 @@
 
 
-header-main{
+#header-main{
 	// @include flex(justify-center);
 	display: block;
 	z-index: 100!important;
@@ -8,6 +8,7 @@ header-main{
 	background: $suorange;
 	transition: .75s background-color;
 	overflow: hidden;
+	position: relative;
 @include breakpoint(md){
 	height: calc(100vh);
 }

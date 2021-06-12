@@ -7,6 +7,7 @@ import {
 	Route,
 } from "react-router-dom";
 import Navigation from "./components/Navigation.js"
+import Header from "./components/Header.js"
 
 class App extends Component {
 	constructor() {
@@ -47,9 +48,10 @@ class App extends Component {
 					<Navigation
 						getData={this.getData}
 						navOpen={this.state.navOpen}/>
+					<Header/>
 					<Route
-						exact
 						path={`/`}
+						exact
 						render={props => {
 							return <div {...props}>
 								Homepage!!!!!!!
