@@ -1,19 +1,20 @@
 import { Component } from "react";
-	import "./assets/webfonts/webfonts.css";
-	// import "./assets/css/normalize.css";
-	import "./assets/css/index.min.css";
-	import {
-		BrowserRouter as Router,
-		Route,
-	} from "react-router-dom";
-	import Navigation from "./components/Navigation.js"
-	import Header from "./components/Header.js"
-	import Connect from "./components/Connect.js"
+import "./assets/webfonts/webfonts.css";
+// import "./assets/css/normalize.css";
+import "./assets/css/index.min.css";
+import {
+	BrowserRouter as Router,
+	Route,
+} from "react-router-dom";
+import Navigation from "./components/Navigation.js"
+import Header from "./components/Header.js"
+import Connect from "./components/Connect.js"
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			navOpen: false,
+			events: []
 		}
 		this.getData = this.getData.bind(this);
 	};
@@ -39,7 +40,11 @@ class App extends Component {
 		let data = await resp.json();
 		return data;
 	};
-	componentDidMount() {
+	async componentDidMount() {
+		let data = await fetch("https://dev.malikdunston.com/data/chapel/get_events.php");
+		let events = await data.json();
+		this.setState({events: JSON.parse(events)})
+		console.log(JSON.parse(events)[0]);
 	}
 	render() {
 		return (
@@ -47,8 +52,8 @@ class App extends Component {
 				<div className={this.state.navOpen ? "navOpen" : ""}>
 					<Navigation
 						getData={this.getData}
-						navOpen={this.state.navOpen}/>
-					<Header/>
+						navOpen={this.state.navOpen} />
+					<Header />
 					<Route
 						path={`/`}
 						exact
@@ -64,7 +69,7 @@ class App extends Component {
 								example page!!!!!!!
 							</button>
 						}} />
-					<Connect getData={this.getData}/>
+					<Connect getData={this.getData} />
 				</div>
 			</Router>
 		);
