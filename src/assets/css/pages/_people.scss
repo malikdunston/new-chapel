@@ -33,7 +33,7 @@ body.people{
 			transform: scale(2);
 		}
 	}
-	ui-view{
+	.ui-view{
 		@include flex(column, align-right);
 		> *{
 			width: 100%;

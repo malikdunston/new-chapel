@@ -109,18 +109,20 @@ render() {
 							key={node.id}
 							className={"list-parent" + (node.selected ? " selected" : "")}>
 							<div className="parent-title">
-								<Link to={`/example`} onClick={this.navToggle("close")}>
+								<Link to={`/${node.slug}`} onClick={this.navToggle("close")}>
 									{node.title}
 								</Link>
 								<div className="parent-title-icon" onClick={this.accordionToggle(node)}></div>
 							</div>
 							<ul className="list-child">
 								{node.ends.map(end=>{
-									return <li key={end.id} 
-										className="child-title"
-										onClick={this.navToggle("close")}>
-										{end.title}
-									</li>
+									return <Link to={`/${node.slug}/${end.slug}`}>
+										<li key={end.id} 
+											className="child-title"
+											onClick={this.navToggle("close")}>
+											{end.title}
+										</li>
+									</Link>
 								})}
 							</ul>
 						</li>

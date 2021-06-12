@@ -23,7 +23,7 @@ body.connect{
 	}}
 
 		
-	ui-view{
+	.ui-view{
 		padding-top: 2rem;
 		display: block;
 	@include breakpoint(md){

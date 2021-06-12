@@ -1,6 +1,4 @@
-body.node,
-body.end,
-body.people{
+#root{
 	header-main{
 		height: 10rem;
 		background: $suorange;
@@ -31,8 +29,8 @@ body.people{
 			transform: scale(2);
 		}
 	}
-	ui-view{
-		padding-top: 2rem;
+	.ui-view{
+		padding-top: 7rem;
 		article{
 			section{
 				// padding-top: 16px;
@@ -70,7 +68,7 @@ body.people{
 	}
 
 @include breakpoint(md){
-	ui-view{
+	.ui-view{
 		display: block;
 
 		article.content{
@@ -83,9 +81,3 @@ body.people{
 		}
 	}
 }}
-
-body.node,
-body.end{
-	header-main{
-	}
-}

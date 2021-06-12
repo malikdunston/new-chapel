@@ -36,7 +36,7 @@ $sun: rgb(240, 240, 233);
 			display: none;
 		}
 	}}
-	ui-view{
+	.ui-view{
 		display: block;
 		margin-top: -4rem;
 	@include breakpoint(md){

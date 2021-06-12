@@ -5,12 +5,15 @@ import { Component } from "react";
 	import {
 		BrowserRouter as Router,
 		Route,
+		Link
 	} from "react-router-dom";
 	import moment from "moment";
 	import Navigation from "./components/Navigation.js"
 	import Header from "./components/Header.js"
 	import Connect from "./components/Connect.js"
 	import Event from "./components/Event.js"
+	import Homepage from "./components/Homepage.js"
+	import Page from "./components/Page.js"
 class App extends Component {
 	constructor() {
 		super();
@@ -62,18 +65,17 @@ class App extends Component {
 	render() {
 		return (
 			<Router basename={'/chapel'}>
-				<div className={this.state.navOpen ? "navOpen" : ""}>
-					<Navigation
-						getData={this.getData}
-						navOpen={this.state.navOpen} />
-					<Header />
+				<Navigation
+					getData={this.getData}
+					navOpen={this.state.navOpen} />
+				<div className={"ui-view" + (this.state.navOpen ? " navOpen" : "")}>
 					<Route
-						path={`/`}
-						exact
+						path={`/`} exact
 						render={props => {
-							return <div {...props}>
-								Homepage!!!!!!!
-							</div>
+							return <Homepage 
+								event={this.state.events[0]} 
+								getData={this.getData} 
+								{...props}/>
 						}} />
 					<Route
 						path={`/example`}
@@ -82,9 +84,22 @@ class App extends Component {
 								example page!!!!!!!
 							</button>
 						}} />
-					<Connect getData={this.getData} />
-					<Event {...this.state.events[0]} />
+					<Route
+						path={`/events`}
+						render={props => {
+							return <div>
+								{this.state.events.map(event=>{
+									return <Event {...event} />
+								})}
+							</div>
+						}} />
+					<Route
+						path={`/:node/:end?`}
+						render={props => {
+							return <Page getData={this.getData} {...props}/>
+						}} />
 				</div>
+				<Connect getData={this.getData} />
 			</Router>
 		);
 	};
