@@ -12,34 +12,19 @@
 @include breakpoint(md){
 	height: calc(100vh);
 }
-&.open {
-	background: $sulgray!important;
-	h1#header-title{
-		color: $suorange;
-	}
-}
 &.header-open{ // timeout function in app.js
 	.header-image{
 		height: calc(100% - 15rem);
-		// transition: 2s;
-		// background-color: blue;
 	}
 }
 	.header-image{
-		height: calc(100% - 24rem);
-		transition: 2s height;
-		// @include flex(justify-center);
 		width: 100%;
-		// height: 20vh;
+		height: calc(100% - 20rem);
+		transition: 2s height;
 		bottom: 0;
 		position: absolute;
-		// top: 15rem;
-		// bottom: 0;
 		z-index: 700!important;
-		background-size: cover;
-		background-position-x: center;
-
-		// padding-top: 260px;
+		object-fit: cover;
 	}
 	h1#header-title{
 		position: fixed;
@@ -69,3 +54,9 @@
 	}}}}
 }
 
+.navOpen #header-main {
+	background: $sulgray!important;
+	h1#header-title{
+		color: $suorange;
+	}
+}

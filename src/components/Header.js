@@ -22,9 +22,10 @@ async componentDidMount(){
 render() {
 	return (
 		<div id="header-main">
-			<div className={"header-image" + (this.state.headerOpen ? " header-image-open" : "")}>
-				<img src={this.state.data.img.src} alt={this.state.data.img.alt} />
-			</div>
+			<img 
+				className={"header-image" + (this.state.headerOpen ? " header-image-open" : "")}
+				src={this.state.data.img.src} 
+				alt={this.state.data.img.alt} />
 			<h1 id="header-title">
 				{this.state.data.title}
 			</h1>
