@@ -1,5 +1,4 @@
 import { Component } from "react";
-	import {Link} from "react-router-dom";
 class Header extends Component {
 constructor() {
 	super();
@@ -14,7 +13,7 @@ constructor() {
 		}
 	}
 };
-async componentDidMount(){
+componentDidMount(){
 	setTimeout(()=>{
 		this.setState({headerOpen: true})
 	}, 700)

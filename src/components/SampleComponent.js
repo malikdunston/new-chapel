@@ -1,6 +1,6 @@
 import { Component } from "react";
 	import {Link} from "react-router-dom";
-class Homepage extends Component {
+class Sample extends Component {
 constructor() {
 	super();
 	this.state = {
@@ -10,8 +10,8 @@ async componentDidMount(){
 }
 render() {
 	return (
-		<div id="homepage">
+		<div id="sample">
 		</div>
 	);
 };
-}; export default Homepage;
+}; export default Sample;

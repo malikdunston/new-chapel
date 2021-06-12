@@ -1,4 +1,4 @@
-nav-connect{
+#nav-connect{
 	position: fixed!important;
 	width: calc(100% - 64px);
 	@include flex(column-reverse);
@@ -8,6 +8,10 @@ nav-connect{
 	bottom: calc(64px + 32px);
 	z-index: 900;
 	transition: .25s;
+	.connect-list{
+		height: 0;
+		overflow: hidden;
+	}
 	.connect-list-item,
 	> button{
 		height: 65px;
@@ -19,12 +23,9 @@ nav-connect{
 		justify-content: center;
 		border-bottom: 2px solid $suorange;
 		color: $suorange;
-	&:last-child{
-		// border-bottom: 0;
-	}}
+	}
 	> button {
 		width: 100%;
-		justify-content: center;
 		background: $suorange;
 		color: white;
 		h3{
@@ -50,8 +51,10 @@ nav-connect{
 }}
 
 // make global
-nav-connect.offpage{
+#nav-connect.offpage{
 	bottom: -100px;
 }
-
+#nav-connect.open .connect-list{
+	height: initial;
+}
 
