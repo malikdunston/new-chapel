@@ -65,7 +65,7 @@ render() {
 		<div id="nav-menu">
 			<div id="menu-top">
 				{/* <a href="/" className="logo-wrap"> */}
-				<Link to={`${process.env.PUBLIC_URL}/`} className="logo-wrap">
+				<Link to={`/`} className="logo-wrap">
 					<img id="logo" src="./logo.svg" alt="Hendricks Chapel Logo" />
 				</Link>
 				{/* </a> */}
@@ -91,7 +91,9 @@ render() {
 							key={node.id}
 							className={"list-parent" + (node.selected ? " selected" : "")}>
 							<div className="parent-title">
-								{node.title}
+								<Link to={`/example`}>
+									{node.title}
+								</Link>
 								<div className="parent-title-icon" onClick={this.accordionToggle(node)}></div>
 							</div>
 							<ul className="list-child">
