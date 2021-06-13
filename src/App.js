@@ -30,6 +30,9 @@ class App extends Component {
 			case "pages":
 				ext = "pages";
 				break
+			case "people":
+				ext = "people";
+				break
 			case "nav":
 				ext = "pages";
 				break
@@ -78,13 +81,6 @@ class App extends Component {
 								{...props}/>
 						}} />
 					<Route
-						path={`/example`}
-						render={props => {
-							return <button {...props}>
-								example page!!!!!!!
-							</button>
-						}} />
-					<Route
 						path={`/events`}
 						render={props => {
 							return <div>
@@ -98,6 +94,7 @@ class App extends Component {
 						render={props => {
 							return <Page getData={this.getData} {...props}/>
 						}} />
+
 				</div>
 				<Connect getData={this.getData} />
 			</Router>
