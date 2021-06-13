@@ -7,7 +7,7 @@ constructor() {
 		data: {
 			title: "A Student-Centered Global Home for Religious, Spiritual, Moral, and Ethical Life.",
 			img: {
-				src: `${process.env.PUBLIC_URL}/assets/images/choir.png`,
+				src: `./assets/images/choir.png`,
 				alt: "We are Syracuse's student-centered home for spiritual life."
 			}
 		}
