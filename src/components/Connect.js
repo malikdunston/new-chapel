@@ -27,9 +27,11 @@ render() {
 			</button>
 			<ul className="connect-list">
 				{this.state.menu.map(item=>{
-					return <li className="connect-list-item">
-						{item}
-					</li>
+					return <Link to={`/connect/${item}`}>
+						<li className="connect-list-item">
+							{item}
+						</li>
+					</Link>
 				})}
 			</ul>
 		</div>

@@ -16,6 +16,7 @@ import { Component } from "react";
 	import Homepage from "./components/Homepage.js"
 	import Page from "./components/Page.js"
 	import Person from "./components/Person.js"
+	import ConnectPage from "./components/ConnectPage.js"
 class App extends Component {
 	constructor() {
 		super();
@@ -102,6 +103,13 @@ class App extends Component {
 							exact path={`/people/:person`} 
 							render={props => {
 								return <Person 
+									getData={this.getData} 
+									{...props}/>
+							}} />
+						<Route
+							exact path={`/connect/:with`} 
+							render={props => {
+								return <ConnectPage 
 									getData={this.getData} 
 									{...props}/>
 							}} />
