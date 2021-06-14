@@ -33,6 +33,7 @@ async componentDidMount(){
 	})
 	let main = allPages.filter(p=>p.parent == 0);
 	let otherPages = allPages.filter(p=>p.parent !== 0);
+	this.props.applyNav(otherPages);
 	let menu = main.map(tab=>{
 		let nodes = otherPages.filter(p=>p.parent == tab.id);
 		nodes = nodes.map(n=>{

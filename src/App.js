@@ -5,6 +5,7 @@ import { Component } from "react";
 	import {
 		BrowserRouter as Router,
 		Route,
+		Switch,
 		Link
 	} from "react-router-dom";
 	import moment from "moment";
@@ -14,16 +15,22 @@ import { Component } from "react";
 	import Event from "./components/Event.js"
 	import Homepage from "./components/Homepage.js"
 	import Page from "./components/Page.js"
+	import Person from "./components/Person.js"
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			navOpen: false,
-			events: []
+			events: [],
+			fullMenu: []
 		}
 		this.getData = this.getData.bind(this);
 		this.sortEvents = this.sortEvents.bind(this);
+		this.applyNav = this.applyNav.bind(this);
 	};
+	applyNav(data){
+		this.setState({fullMenu: data})
+	}
 	async getData(type, params) {
 		let url = "https://hendrickswp.cecildunston.com/wp-json/wp/v2/", ext = "";
 		switch (type) {
@@ -67,9 +74,10 @@ class App extends Component {
 	}
 	render() {
 		return (
-			<Router basename={'/chapel'}>
+			<Router>
 				<Navigation
 					getData={this.getData}
+					applyNav={this.applyNav}
 					navOpen={this.state.navOpen} />
 				<div className={"ui-view" + (this.state.navOpen ? " navOpen" : "")}>
 					<Route
@@ -89,12 +97,23 @@ class App extends Component {
 								})}
 							</div>
 						}} />
-					<Route
-						path={`/:node/:end?`}
-						render={props => {
-							return <Page getData={this.getData} {...props}/>
-						}} />
-
+					<Switch>
+						<Route
+							exact path={`/people/:person`} 
+							render={props => {
+								return <Person 
+									getData={this.getData} 
+									{...props}/>
+							}} />
+						<Route
+							exact path={`/:node/:end?`} 
+							render={props => {
+								return <Page 
+									getData={this.getData} 
+									fullMenu={this.state.fullMenu}
+									{...props}/>
+							}} />
+					</Switch>
 				</div>
 				<Connect getData={this.getData} />
 			</Router>
