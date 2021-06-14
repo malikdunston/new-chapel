@@ -1,28 +1,20 @@
 @charset 'UTF-8';
+* {box-sizing: border-box;}
+a {text-decoration: none;}
 
-
-@import// 	brand
-
-	'brand/colors',
-	'brand/typography';
-
-
-@import// 	styles
-
-	'styles/base',
-	'styles/normalize',
-	'styles/flex()',
-	'styles/breakpoint()',
-	'styles/button';
+@import
+	'brand/colors', 'brand/typography',
+	'styles/flex()', 'styles/breakpoint()';
 
 
 @import// 	document
 
+	'document/ui-view',
+	'document/button',
 	'document/nav-menu',
 	'document/nav-connect',
 	'document/header',
 	'document/calendar',
-	'document/ui-view',
 	'document/event-badge';
 
 

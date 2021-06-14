@@ -97,12 +97,8 @@ render() {
 					<div className="header-image">
 						<img src={this.state.current.img} alt="" />
 					</div>
-					<a className="header-title">
-						{this.state.current.title}
-					</a>
-					<h2 className="header-brief">
-						{this.state.current.brief}
-					</h2>
+					<a className="header-title">{this.state.current.title}</a>
+					<h2 className="header-brief" dangerouslySetInnerHTML={{ __html: this.state.current.brief }}></h2>
 				</div>
 				<ul id="body-list">
 					{this.state.current.nodes.map(node=>{

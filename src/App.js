@@ -1,6 +1,6 @@
 import { Component } from "react";
 	import "./assets/webfonts/webfonts.css";
-	// import "./assets/css/normalize.css";
+	import "./assets/css/normalize.css";
 	import "./assets/css/index.min.css";
 	import {
 		BrowserRouter as Router,
@@ -28,7 +28,13 @@ class App extends Component {
 		this.getData = this.getData.bind(this);
 		this.sortEvents = this.sortEvents.bind(this);
 		this.applyNav = this.applyNav.bind(this);
+		this.toHtml = this.toHtml.bind(this);
 	};
+	toHtml(string){
+		let w = document.createElement("div");
+		w.innerHTML = string;
+		return w
+	}
 	applyNav(data){
 		this.setState({fullMenu: data})
 	}
@@ -77,28 +83,30 @@ class App extends Component {
 		return (
 			<Router>
 				<Navigation
+					toHtml={this.toHtml}
 					getData={this.getData}
 					applyNav={this.applyNav}
 					navOpen={this.state.navOpen} />
+				<Header />
 				<div className={"ui-view" + (this.state.navOpen ? " navOpen" : "")}>
-					<Route
-						path={`/`} exact
-						render={props => {
-							return <Homepage 
-								event={this.state.events[0]} 
-								getData={this.getData} 
-								{...props}/>
-						}} />
-					<Route
-						path={`/events`}
-						render={props => {
-							return <div>
-								{this.state.events.map(event=>{
-									return <Event {...event} />
-								})}
-							</div>
-						}} />
 					<Switch>
+						<Route
+							path={`/`} exact
+							render={props => {
+								return <Homepage 
+									event={this.state.events[0]} 
+									getData={this.getData} 
+									{...props}/>
+							}} />
+						<Route
+							exact path={`/events`}
+							render={props => {
+								return <div>
+									{this.state.events.map(event=>{
+										return <Event {...event} />
+									})}
+								</div>
+							}} />
 						<Route
 							exact path={`/people/:person`} 
 							render={props => {

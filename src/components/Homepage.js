@@ -17,12 +17,11 @@ async componentDidMount(){
 render() {
 	return (
 		<div id="home">
-			<Header />
 			<Link to={"/events"}><Event {...this.props.event} /></Link>
 			{this.state.page.map(block=>{
 				return <div>
 					<h1>{block.title.rendered}</h1>
-					<p>{block.content.rendered}</p>
+					<div dangerouslySetInnerHTML={{ __html: block.content.rendered }}></div>
 				</div>
 			})}
 		</div>

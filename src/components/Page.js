@@ -66,7 +66,7 @@ renderPeople(people){
 		</section>
 	}
 }
-renderEndPages(){
+moreInThisSection(){
 	return <section>
 		<h3>More in this Section</h3>
 		{this.state.ends.map(p=>{
@@ -84,12 +84,12 @@ render() {
 				<section className="wp-section">
 					{(this.props.match.params.end === "staff" )
 						? this.renderPeople(this.state.people)
-						: <div>{this.state.page.content.rendered}</div>}
+						: <div dangerouslySetInnerHTML={{ __html: this.state.page.content.rendered }}></div>}
 				</section>
 			</article>
 			<article className="side">
 				{this.renderPeople(this.state.people)}
-				{this.renderEndPages()}
+				{this.moreInThisSection()}
 			</article>
 		</div>
 	);
