@@ -3,7 +3,6 @@
 #header-main{
 	// @include flex(justify-center);
 	display: block;
-	z-index: 100!important;
 	height: calc(100vh - 2rem);
 	background: $suorange;
 	transition: .75s background-color;
@@ -23,12 +22,10 @@
 		transition: 2s height;
 		bottom: 0;
 		position: absolute;
-		z-index: 700!important;
 		object-fit: cover;
 	}
 	h1#header-title{
 		position: fixed;
-		z-index: 50!important;
 		top: 7rem;
 		margin: 0;
 		// right: 0;

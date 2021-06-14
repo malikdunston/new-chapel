@@ -6,7 +6,6 @@
 	margin: 0 32px;
 	background: white;
 	bottom: calc(64px + 32px);
-	z-index: 900;
 	transition: .25s;
 	.connect-list{
 		height: 0;
@@ -43,7 +42,6 @@
 	margin: 0;
 	width: 240px;
 	left: 32px;
-	z-index: 1000;
 }
 @include breakpoint(lg){
 	bottom: 64px;

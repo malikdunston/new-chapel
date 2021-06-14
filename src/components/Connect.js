@@ -21,7 +21,7 @@ toggleConnect = (item) => (ev) => {
 render() {
 	return (
 		<div id="nav-connect"
-			className={"linked" + (this.state.offPage ? " offpage" : "") + (this.state.open ? " open" : "")}>
+			className={(this.state.offPage ? " offpage" : "") + (this.state.open ? " open" : "")}>
 			<button onClick={this.toggleConnect()}>
 				<h3>Connect</h3>
 			</button>

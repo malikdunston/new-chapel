@@ -6,11 +6,26 @@ a {text-decoration: none;}
 	'brand/colors', 'brand/typography',
 	'styles/flex()', 'styles/breakpoint()';
 
-
+button{
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-family: "ShermanSans-Book";
+	font-size: 1.25rem;
+}.content button{
+	background: $suorange;
+	height: 65px;
+	@include flex(column, align-center, justify-center);
+	color: white;
+	width: 100%;
+	text-transform: uppercase;
+	font-weight: 900;
+	letter-spacing: .15rem;
+	margin: 32px 0;
+}
 @import// 	document
-
 	'document/ui-view',
-	'document/button',
+	
 	'document/nav-menu',
 	'document/nav-connect',
 	'document/header',

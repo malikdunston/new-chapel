@@ -82,11 +82,6 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-				<Navigation
-					toHtml={this.toHtml}
-					getData={this.getData}
-					applyNav={this.applyNav}
-					navOpen={this.state.navOpen} />
 				<Header />
 				<div className={"ui-view" + (this.state.navOpen ? " navOpen" : "")}>
 					<Switch>
@@ -132,6 +127,11 @@ class App extends Component {
 					</Switch>
 				</div>
 				<Connect getData={this.getData} />
+				<Navigation
+					toHtml={this.toHtml}
+					getData={this.getData}
+					applyNav={this.applyNav}
+					navOpen={this.state.navOpen} />
 			</Router>
 		);
 	};
